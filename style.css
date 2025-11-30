@@ -1,36 +1,110 @@
-/* Black Owl — Dark + Gold theme */
-:root{
-  --bg:#000000;
-  --panel:#0f0f0f;
-  --gold:#D4AF37;
-  --muted:#bfbdb6;
+/* ======== GLOBAL ======== */
+
+body {
+    background: #000;
+    color: #f5f5f5;
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
 }
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background:var(--bg);
-  color:var(--muted);
-  -webkit-font-smoothing:antialiased;
+
+a {
+    color: #d4af37;
+    text-decoration: none;
+    transition: 0.2s;
 }
-.site-header{
-  text-align:center;
-  padding:30px 20px 10px;
-  border-bottom:1px solid rgba(212,175,55,0.06);
+a:hover {
+    color: #ffd700;
 }
-.site-header.small{padding:20px 10px}
-.logo{width:96px;height:auto;filter:drop-shadow(0 0 12px rgba(212,175,55,0.12));}
-.site-header h1{color:var(--gold);margin:8px 0 4px;font-size:28px}
-.nav{margin-top:8px}
-.nav a{color:var(--muted);margin:0 8px;text-decoration:none}
-.container{max-width:980px;margin:30px auto;padding:0 14px}
-.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(212,175,55,0.06);padding:20px;border-radius:10px;margin-bottom:18px;box-shadow:0 6px 30px rgba(0,0,0,0.6)}
-h2{color:var(--gold);text-shadow:0 0 12px rgba(212,175,55,0.06)}
-.btn{display:inline-block;background:linear-gradient(90deg,var(--gold),#b58f2b);color:#111;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600;border:none;cursor:pointer}
-.features{display:flex;flex-wrap:wrap;gap:18px}
-.features .card{flex:1 1 300px}
-.site-footer{text-align:center;padding:30px 10px;color:#6f6f6f}
-@media(max-width:720px){
-  .features{flex-direction:column}
-  .logo{width:72px}
+
+/* ======== HEADER ======== */
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 18px 24px;
+    border-bottom: 1px solid #d4af37;
+    background: #000;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 20px;
+}
+
+.nav a {
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ======== CONTENT ======== */
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 0;
+}
+
+h1, h2, h3 {
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.box {
+    background: #111;
+    border: 1px solid #333;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 22px;
+    border-radius: 8px;
+    background: #d4af37;
+    color: #000;
+    font-weight: bold;
+    transition: 0.2s;
+}
+.button:hover {
+    background: #ffd700;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    color: #777;
+}
+
+/* ======== TABLES ======== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+td, th {
+    padding: 12px;
+    border: 1px solid #333;
+}
+th {
+    background: #222;
+}
+
+/* ======== MOBILE ======== */
+
+@media (max-width: 600px) {
+    .nav a {
+        margin-right: 12px;
+        font-size: 16px;
+    }
 }
