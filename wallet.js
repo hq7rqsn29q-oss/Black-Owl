@@ -1,26 +1,38 @@
-// Wallet UI: basic MetaMask connection (works in browser with MetaMask)
-async function connect() {
-  const status = document.getElementById('status');
-  const addrEl = document.getElementById('addr');
-  const boEl = document.getElementById('boBalance');
-  const walletInfo = document.getElementById('walletInfo');
+// wallet.js — minimal wallet integration (MetaMask)
+const TOKEN_ADDRESS = "0xYOUR_DEPLOYED_TOKEN_ADDRESS"; // <- вставь адрес токена BO$
+const TOKEN_ABI = [
+  // минимальный фрагмент ABI для balanceOf и decimals и symbol
+  {"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"type":"function"},
+  {"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"type":"function"},
+  {"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"type":"function"}
+];
 
+async function connectWallet() {
   if (!window.ethereum) {
-    status.innerText = "MetaMask not found";
-    alert("MetaMask не найден. Установите расширение/мобильный кошелек.");
+    alert("MetaMask не найден — установите расширение или мобильный кошелёк.");
     return;
   }
   try {
     const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-    const addr = accounts[0];
-    addrEl.innerText = addr;
-    status.innerText = "Connected";
-    walletInfo.style.display = "block";
-    // BO balance retrieval would require ABI + token address (to be added after deploy)
-    boEl.innerText = "—";
-  } catch(e) {
-    status.innerText = "Connection failed";
-    console.error(e);
+    const address = accounts[0];
+    document.getElementById('address').innerText = address;
+    await showTokenBalance(address);
+  } catch (err) {
+    console.error(err);
+    alert("Ошибка подключения: " + (err.message || err));
   }
 }
-document.getElementById('connectBtn').addEventListener('click', connect);
+
+async function showTokenBalance(address) {
+  try {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const token = new ethers.Contract(TOKEN_ADDRESS, TOKEN_ABI, provider);
+    const [decimals, symbol] = await Promise.all([ token.decimals(), token.symbol() ]);
+    const raw = await token.balanceOf(address);
+    const balance = Number(ethers.utils.formatUnits(raw, decimals));
+    document.getElementById('balance').innerText = `${balance.toLocaleString()} ${symbol}`;
+  } catch (err) {
+    console.error(err);
+    document.getElementById('balance').innerText = 'Ошибка получения баланса';
+  }
+}
