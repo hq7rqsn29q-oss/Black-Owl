@@ -1,27 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BO Token — Black Owl</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <title>BO Token</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.svg">
 </head>
 <body>
-  <header class="site-header small">
-    <img src="assets/img/logo.svg" alt="Black Owl Logo" class="logo">
-    <h1>BO Token (BO)</h1>
-  </header>
 
-  <main class="container">
-    <div class="card">
-      <h2>Token summary</h2>
-      <ul>
-        <li>Name: Black Owl</li>
-        <li>Symbol: BO</li>
-        <li>Total supply: 18,000,000</li>
-        <li>Initial transfer: 3,000,000 to specified address</li>
-      </ul>
+<header class="header">
+    <img src="logo.svg" class="logo">
+    <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="wallet.html">Wallet</a>
+        <a href="dex.html">DEX</a>
+        <a href="explorer.html">Explorer</a>
+        <a href="coin.html">BO Token</a>
+        <a href="docs.html">Docs</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>BO$ Token</h1>
+
+    <div class="box">
+        <h3>Информация</h3>
+        <table>
+            <tr><th>Имя</th><td>Black Owl Token</td></tr>
+            <tr><th>Символ</th><td>BO$</td></tr>
+            <tr><th>Тип</th><td>ERC20</td></tr>
+            <tr><th>Эмиссия</th><td>18 000 000</td></tr>
+            <tr><th>Контракт</th><td><code>0x000000000000000000</code></td></tr>
+        </table>
+
+        <a href="BlackOwlToken.sol" class="button" download>📄 Скачать контракт</a>
     </div>
-  </main>
+</div>
+
+<footer>© 2025 Black Owl</footer>
 </body>
 </html>
