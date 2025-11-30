@@ -1,23 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Black Owl DEX</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <title>Black Owl DEX</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.svg">
 </head>
 <body>
-  <header class="site-header small">
-    <img src="assets/img/logo.svg" alt="Black Owl Logo" class="logo">
-    <h1>Black Owl DEX</h1>
-  </header>
+<header class="header">
+    <img src="logo.svg" class="logo">
+    <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="wallet.html">Wallet</a>
+        <a href="dex.html">DEX</a>
+        <a href="explorer.html">Explorer</a>
+        <a href="coin.html">BO Token</a>
+        <a href="docs.html">Docs</a>
+    </nav>
+</header>
 
-  <main class="container">
-    <div class="card">
-      <h2>Swap (demo)</h2>
-      <p>Тут будет интерфейс обмена токенов. Это статичный макет для старта.</p>
+<div class="container">
+    <h1>Black Owl DEX</h1>
+
+    <div class="box">
+        <h3>Своп BO$ → ETH (демо)</h3>
+
+        <label>Количество BO$:</label>
+        <input id="amount" style="width:100%; padding:10px; margin:10px 0;">
+
+        <button class="button" onclick="swap()">Своп</button>
+
+        <p id="swapStatus" style="margin-top:20px;">—</p>
     </div>
-  </main>
-  <script src="assets/js/dex.js"></script>
+</div>
+
+<script src="dex.js"></script>
+<footer>© 2025 Black Owl</footer>
 </body>
 </html>
