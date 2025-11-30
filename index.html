@@ -1,13 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Black Owl — Test Deploy</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Black Owl Ecosystem</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body style="background:#0d0d0d; color:white; font-family:Arial,sans-serif;">
-  <h1>Black Owl Ecosystem</h1>
-  <p>Test deploy successful!</p>
+<body>
+  <header class="site-header">
+    <img src="assets/img/logo.svg" alt="Black Owl Logo" class="logo">
+    <h1>Black Owl Ecosystem</h1>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="wallet.html">Wallet</a>
+      <a href="dex.html">DEX</a>
+      <a href="explorer.html">Explorer</a>
+      <a href="coin.html">BO Token</a>
+      <a href="docs.html">Docs</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero card">
+      <h2>Добро пожаловать в Black Owl</h2>
+      <p>Инновационная децентрализованная экосистема — токен <strong>BO</strong>, кошелёк и DEX.</p>
+      <p class="cta"><a class="btn" href="wallet.html">Открыть Wallet</a></p>
+    </section>
+
+    <section class="features">
+      <div class="card">
+        <h3>Что есть в проекте</h3>
+        <ul>
+          <li>🦉 Black Owl Wallet — front-end для MetaMask</li>
+          <li>⚡ BO Token — ERC20 с фиксированной эмиссией</li>
+          <li>🔁 Black Owl DEX — демо-интерфейс свопа</li>
+          <li>🔎 Blockchain Explorer — поиск транзакций</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Быстрые ссылки</h3>
+        <p><a href="dex.html">Black Owl DEX</a></p>
+        <p><a href="explorer.html">Blockchain Explorer</a></p>
+        <p><a href="coin.html">BO Token Info</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © 2025 Black Owl — Decentralized Future
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

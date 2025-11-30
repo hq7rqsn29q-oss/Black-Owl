@@ -1,0 +1,12 @@
+{
+  "name": "black-owl",
+  "version": "0.1.0",
+  "description": "Black Owl static site + example ERC20 contract",
+  "scripts": {
+    "build": "echo Static"
+  },
+  "devDependencies": {
+    "hardhat": "^2.16.0",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0"
+  }
+}

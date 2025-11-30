@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Black Owl Explorer</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header small">
+    <img src="assets/img/logo.svg" alt="Black Owl Logo" class="logo">
+    <h1>Blockchain Explorer</h1>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h2>Search transaction</h2>
+      <p>Демо: вставьте hash и нажмите Search (интеграция с API — позже).</p>
+      <input id="tx" placeholder="0x..." style="width:100%;padding:8px;">
+      <button id="search" class="btn" style="margin-top:10px;">Search</button>
+      <pre id="result"></pre>
+    </div>
+  </main>
+  <script src="assets/js/explorer.js"></script>
+</body>
+</html>
